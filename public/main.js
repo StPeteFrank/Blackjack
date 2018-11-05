@@ -184,6 +184,17 @@ document.addEventListener('DOMContentLoaded', main)
 // Need deck    X
 // Need dealer  X
 // Need player  X
+//Every time someone clicks on hit we need to add the value of the cards
+//Add an eventlistener when clicks happen
+//Find the button
+//Tell the button everytime you are clicked add the value of the cards to yor total
+//Add a function that I designed
+// Dealer deals to player
+//Every time someone clicks on hit we need to add the value of the cards
+//Add an eventlistener when clicks happen
+//Find the button
+//Tell the button everytime you are clicked add the value of the cards to yor total
+//Add a function that I designed
 // Dealer deals to dealer
 // Dealer deals to player
 // Need total value of cards for dealer
