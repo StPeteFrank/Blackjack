@@ -33,11 +33,11 @@ button {
 .stay {
   color: red;
 }
-/* .player-hand img { */
+.player-hand img {
   width: 6rem;
   margin: 0.6rem;
-  /* box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); */
-  /* border-radius: 4px; */
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
 }
 
 .dealer-hand {
@@ -46,19 +46,19 @@ button {
   justify-content: center;
 }
 
-/* .dealer-hand img { */
+.dealer-hand img {
   width: 6rem;
   height: 139px;
   margin: 0.6rem;
-  /* box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5); */
-  /* border-radius: 4px; */
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
 }
 
-/* .hidden { */
+.hidden {
   display: none;
 }
-/* .player-total, */
-/* .dealer-total { */
+.player-total,
+.dealer-total {
   font-size: 1.4rem;
   margin-top: 0;
 }

@@ -180,25 +180,55 @@ const main = () => {
 }
 
 document.addEventListener('DOMContentLoaded', main)
+// -------------------------------------------------
+//            INCLUDED BY INSTRUCTOR:
+// The deck of cards array has been provided
 
-// Need deck    X
-// Need dealer  X
-// Need player  X
-//Every time someone clicks on hit we need to add the value of the cards
-//Add an eventlistener when clicks happen
-//Find the button
-//Tell the button everytime you are clicked add the value of the cards to yor total
-//Add a function that I designed
-// Dealer deals to player
-//Every time someone clicks on hit we need to add the value of the cards
-//Add an eventlistener when clicks happen
-//Find the button
-//Tell the button everytime you are clicked add the value of the cards to yor total
-//Add a function that I designed
-// Dealer deals to dealer
-// Dealer deals to player
-// Need total value of cards for dealer
-// Need total value of cards for player
-// Need to see who wins
-// Display when a player "busts"
-// Restart or deal again
+// A main section has ben provided. It includes:
+
+// -Includes a shuffle for loop.
+
+// -Includes a dealCardToPlayer for loop.
+// -Includes a let hitButton = document.querySelector('.hit') button
+// -Includes a hitButton.addEventListener('click', dealCardToPlayer) function.
+// -It tests whats inside of console.log(playerHand)
+// -It tests whats inside of console.log(deck)
+
+// -Includes a dealCardToDealer for loop.
+// -It does NOT include a let hitButton = document.querySelector('.hit') button or ('.stay') button
+// -It includes a hitButton.addEventListener('click', dealCardToPlayer) function.
+// -It tests whats inside of console.log(dealerHand)
+// -It tests whats inside of console.log(deck)
+// -------------------------------------------------
+//              I NEED TO ADD:
+// A section (or Li) for classes: player hand, player total, hit button
+// -Find the ul classes and buttons
+// -Adding images to player hand. Card images have been provided and are stored.
+// -Every time someone clicks on hit we need to add the value of the cards.
+// ---A for loop on how to get card value for playerHand
+// -Add an eventlistener when clicks happen(this one had been included)
+// A Return function (return playerTotal) to display total
+
+// A section (or Li) for classes: dealer hand, dealer total, stay button
+// -Find the ul classes and buttons
+// -Adding images to dealer hand. Ive downloaded a back of card image for hidden dealer hand.
+// -Every time someone clicks on hit we need to add the value of the cards.
+// ---A for loop on how to get card value for dealerHand
+// -Add an eventlistener when clicks happen
+// A Return function (return dealerTotal) to display total
+// since I want to use images id like to use the hidden function
+
+// A section for classes: game results(whoWins) and restart button
+// --------------------------------------------------
+//            INSTRUCTIONS IN ENGLISH:
+// Start with a deck of cards
+// Have the ability to shuffle cards
+// Deal the cards to both player and dealer
+// The objective is to get as close to 21 total value in hand
+//  -without going over (bust)
+// If your total hand value is higher than the dealers after you stay you win
+// You can continue to hit until you get 21 or bust
+// Dealer stays when he reaches 17
+// the dealer will reveal his cards once you stay
+// If the dealer's value is higher dealer wins
+// Start a new hand to continue playing
