@@ -1,79 +1,24 @@
-<!-- <!DOCTYPE html>
-<html>
-
-<head lang="en">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blackjack</title>
-  <link rel="stylesheet" href="/screen.css">
-</head>
-
-<header>
-  <h1>
-    BlackJack
-  </h1>
-</header>
-
-<body>
-  <div class="center">
-    <p class="game-results">Gotta play to win!</p>
-  </div>
-  <div class="center">
-    <button class="reset">Deal me in again!</button>
-  </div>
-
-  <div class="play-area">
-    <div class="left">
-      <button class="hit">Hit</button>
-      <p>Player Cards:</p>
-      <p class="player-total">Total 0</p>
-      <div class="player-hand">
-      </div>
-    </div>
-
-    <div class="right">
-      <button class="stay">Stay</button>
-      <p>Dealer Cards:</p>
-      <p class="dealer-total">Total 0</p>
-      <div class="dealer-hand">
-        <img class="cardback-one" src="./images/card back red.png" />
-        <img class="cardback-two" src="./images/card back red.png" />
-      </div>
-    </div>
-  </div>
-
-  <script src="/main.js" charset="utf-8"></script>
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="/screen.css" />
+  </head>
 
-<head lang="en">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blackjack</title>
-  <link rel="stylesheet" href="/screen.css">
-</head>
+  <body>
+    <header><p>Game on!</p></header>
 
-<header>
-  <h1>
-    BlackJack
-  </h1>
-</header>
+    <button class="hit">hit</button> <button class="stay">stay</button>
 
-<body>
-  <button class='hit'>hit</button>
-  <button class='stay'>stay</button>
-  <ul class='player-hand'>
-    <li>The Player Has:</li>
-  </ul>
+    <p class="playerHandTotal"></p>
+    <p>The Player Has:</p>
+    <ul class="player-hand"></ul>
 
-  <ul class='dealer-hand'>
-    <li>The Dealer Has:</li>
-  </ul>
-  <script src="/main.js" charset="utf-8"></script>
-</body>
-
+    <p class="dealerHandTotal"></p>
+    <p>The Dealer Has:</p>
+    <ul class="dealer-hand"></ul>
+    <script src="/main.js" charset="utf-8"></script>
+  </body>
 </html>

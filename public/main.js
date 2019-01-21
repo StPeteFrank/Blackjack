@@ -1,4 +1,5 @@
 // This is our list of 52 cards
+
 let deck = [
   { face: '2', value: 2, suit: 'spades' },
   { face: '3', value: 3, suit: 'spades' },
@@ -53,8 +54,58 @@ let deck = [
   { face: 'king', value: 10, suit: 'diamonds' },
   { face: 'ace', value: 11, suit: 'diamonds' }
 ]
+//Step 1.
+let playerHand = []
+let dealerHand = []
 
-// This code will build the deck dynamically
+const main = () => {
+  // Shuffle the deck into a random order
+  //
+  // Uses [Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher–Yates_shuffle)
+  for (let index = 52 - 1; index > 1; index -= 1) {
+    let otherIndex = Math.floor(Math.random() * index)
+
+    let firstCard = deck[index]
+    let secondCard = deck[otherIndex]
+
+    deck[index] = secondCard
+    deck[otherIndex] = firstCard
+  }
+  //Step 3. Finding the UL for the player hand.
+  let playerHandList = document.querySelector('.player-hand')
+  console.log(playerHandList)
+
+  //Step 2. This loop pops a card from deck and pushes onto playerHand
+  for (let count = 0; count < 2; count++) {
+    let card = deck.pop()
+    playerHand.push(card)
+    //Step 4. Create new LI.
+    let newCardItem = document.querySelector('li')
+    //Step 5. Make the text of the LI be the description of the card.
+    newCardItem.textContent = `The ${card.face} of ${card.suit}.`
+    //Step 6. Append that LI to the UL.
+    playerHandList.appendChild()
+  }
+  console.log(playerHand)
+  console.log(deck)
+}
+
+document.addEventListener('DOMContentLoaded', main)
+//
+//
+//
+//
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//// This code will build the deck dynamically
 //
 // // This will eventually be our deck of 52 cards
 // let deck = []
@@ -90,145 +141,138 @@ let deck = [
 // }
 
 // This array will store the player's hand
-let playerHand = []
+// let playerHand = []
 
-// This array will store the dealer's hand
-let dealerHand = []
+// // This array will store the dealer's hand
+// let dealerHand = []
 
-const dealCardToPlayer = () => {
-  let playerHandList = document.querySelector('.player-hand')
+// const getTheValueOfThePlayerHand = () => {
+//   let valueOfPlayersHand = 0
+//   playerHand.forEach(card => {
+//     valueOfPlayersHand = valueOfPlayersHand + card.value
+//   })
 
-  // - pop another card
-  // - push it to the hand
-  // - add the card to the interface
-  let card = deck.pop()
+//   return valueOfPlayersHand
+// }
 
-  playerHand.push(card)
+// const declareWinnerOrLoser = message => {
+//   let gameStatus = document.querySelector('header p')
+//   gameStatus.textContent = message
 
-  // Experiment
-  // let playerHandTotal = playerHand[0] + playerHand[1]
-  // console.log(playerHandTotal)
+//   let hitButton = document.querySelector('.hit')
+//   hitButton.disabled = 'disabled'
 
-  // Add this card to the user interface
+//   let stayButton = document.querySelector('.stay')
+//   stayButton.disabled = 'disabled'
+// }
 
-  // Create new LI
-  let newCardItem = document.createElement('li')
+// const dealCardToPlayer = () => {
+//   let playerHandList = document.querySelector('.player-hand')
 
-  // Make the text of the LI be the description of the card
-  newCardItem.textContent = `The ${card.face} of ${card.suit}`
+//   // - pop another card
+//   // - push it to the hand
+//   // - add the card to the interface
+//   let card = deck.pop()
 
-  // Append that LI to the UL
-  playerHandList.appendChild(newCardItem)
-}
-const dealCardToDealer = () => {
-  let dealerHandList = document.querySelector('.dealer-hand')
+//   playerHand.push(card)
 
-  // - pop another card
-  // - push it to the hand
-  // - add the card to the interface
-  let card = deck.pop()
+//   let playerHandTotal = document.querySelector('.playerHandTotal')
+//   playerHandTotal.textContent = getTheValueOfThePlayerHand()
 
-  dealerHand.push(card)
+//   // If the player goes over 21
+//   if (getTheValueOfThePlayerHand() > 21) {
+//     // Display the player busted
+//     declareWinnerOrLoser('Player Busted')
+//   }
 
-  // Add this card to the user interface
+//   // Add this card to the user interface
 
-  // Create new LI
-  let newCardItem = document.createElement('li')
+//   // Create new LI
+//   let newCardItem = document.createElement('li')
 
-  // Make the text of the LI be the description of the card
-  newCardItem.textContent = `The ${card.face} of ${card.suit}`
+//   // Make the text of the LI be the description of the card
+//   newCardItem.textContent = `The ${card.face} of ${card.suit}`
 
-  // Append that LI to the UL
-  dealerHandList.appendChild(newCardItem)
-}
+//   // Append that LI to the UL
+//   playerHandList.appendChild(newCardItem)
+// }
 
-const main = () => {
-  // Shuffle the deck into a random order
-  //
-  // Uses [Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher–Yates_shuffle)
-  for (let index = 52 - 1; index > 1; index -= 1) {
-    let otherIndex = Math.floor(Math.random() * index)
+// const getTheValueOfTheDealerHand = () => {
+//   let valueOfDealerHand = 0
+//   dealerHand.forEach(card => {
+//     valueOfDealerHand = valueOfDealerHand + card.value
+//   })
 
-    let firstCard = deck[index]
-    let secondCard = deck[otherIndex]
+//   return valueOfDealerHand
+// }
 
-    deck[index] = secondCard
-    deck[otherIndex] = firstCard
-  }
+// const dealOneCardToTheDealer = () => {
+//   let card = deck.pop()
 
-  for (let count = 0; count < 2; count++) {
-    dealCardToPlayer()
-  }
+//   dealerHand.push(card)
 
-  // Find the hit button
-  let hitButton = document.querySelector('.hit')
-  // Add an event listener on 'click' that does:
-  hitButton.addEventListener('click', dealCardToPlayer)
+//   // Add this card to the user interface
 
-  console.log(playerHand)
-  console.log(deck)
+//   dealerHandList = document.querySelector('.dealer-hand')
 
-  // For loop for dealer
-  for (let count = 0; count < 2; count++) {
-    dealCardToDealer()
-  }
-  // Event listener for dealer
-  hitButton.addEventListener('click', dealCardToDealer)
+//   // Create new LI
+//   let newCardItem = document.createElement('li')
 
-  console.log(dealerHand)
-  console.log(deck)
-}
+//   // Make the text of the LI be the description of the card
+//   newCardItem.textContent = `The ${card.face} of ${card.suit}`
 
-document.addEventListener('DOMContentLoaded', main)
-// -------------------------------------------------
-//            INCLUDED BY INSTRUCTOR:
-// The deck of cards array has been provided
+//   // Append that LI to the UL
+//   dealerHandList.appendChild(newCardItem)
 
-// A main section has ben provided. It includes:
+//   let dealerHandTotal = document.querySelector('.dealerHandTotal')
+//   dealerHandTotal.textContent = getTheValueOfTheDealerHand()
+// }
 
-// -Includes a shuffle for loop.
+// const dealCardsToDealer = () => {
+//   let dealerHand = document.querySelector('.dealer-hand')
+//   dealerHand.classList.add('shown')
 
-// -Includes a dealCardToPlayer for loop.
-// -Includes a let hitButton = document.querySelector('.hit') button
-// -Includes a hitButton.addEventListener('click', dealCardToPlayer) function.
-// -It tests whats inside of console.log(playerHand)
-// -It tests whats inside of console.log(deck)
+//   // - When the player stays (when they click on the stay button)
+//   //   - Have the dealer keep taking cards as long as the total value of their hand is 17 or less
+//   while (getTheValueOfTheDealerHand() <= 17) {
+//     dealOneCardToTheDealer()
+//   }
 
-// -Includes a dealCardToDealer for loop.
-// -It does NOT include a let hitButton = document.querySelector('.hit') button or ('.stay') button
-// -It includes a hitButton.addEventListener('click', dealCardToPlayer) function.
-// -It tests whats inside of console.log(dealerHand)
-// -It tests whats inside of console.log(deck)
-// -------------------------------------------------
-//              I NEED TO ADD:
-// A section (or Li) for classes: player hand, player total, hit button
-// -Find the ul classes and buttons
-// -Adding images to player hand. Card images have been provided and are stored.
-// -Every time someone clicks on hit we need to add the value of the cards.
-// ---A for loop on how to get card value for playerHand
-// -Add an eventlistener when clicks happen(this one had been included)
-// A Return function (return playerTotal) to display total
+//   //   - See who won
+//   //     - See if the dealer is over 21, if so, the player wins
+//   if (getTheValueOfTheDealerHand() > 21) {
+//     declareWinnerOrLoser('Player Wins')
+//   } else {
+//     //     - Compare the player's hand total to the dealers and see which is higher
+//     if (getTheValueOfThePlayerHand() > getTheValueOfTheDealerHand()) {
+//       declareWinnerOrLoser('Player Wins')
+//     } else {
+//       // The dealer wins!
+//       declareWinnerOrLoser('Dealer Wins')
+//     }
+//   }
+// }
 
-// A section (or Li) for classes: dealer hand, dealer total, stay button
-// -Find the ul classes and buttons
-// -Adding images to dealer hand. Ive downloaded a back of card image for hidden dealer hand.
-// -Every time someone clicks on hit we need to add the value of the cards.
-// ---A for loop on how to get card value for dealerHand
-// -Add an eventlistener when clicks happen
-// A Return function (return dealerTotal) to display total
-// since I want to use images id like to use the hidden function
+// const main = () => {
+// Shuffle the deck into a random order
+//
 
-// A section for classes: game results(whoWins) and restart button
-// --------------------------------------------------
-//            INSTRUCTIONS IN ENGLISH:
-// Start with a deck of cards
-// Have the ability to shuffle cards
-// Deal the cards to both player and dealer
-// The objective is to get as close to 21 total value in hand
-//  -without going over (bust)
-// If your total hand value is higher than the dealers after you stay you win
-// You can continue to hit until you get 21 or bust
-// Dealer stays when he reaches 17
-// the dealer will reveal his cards once you stay
-// If the dealer's value is higher dealer wins
-// Start a new hand to continue playing
+//   for (let count = 0; count < 2; count++) {
+//     dealCardToPlayer()
+//   }
+
+//   for (let count = 0; count < 2; count++) {
+//     dealOneCardToTheDealer()
+//   }
+
+//   // Find the hit button
+//   let hitButton = document.querySelector('.hit')
+//   // Add an event listener on 'click' that does:
+//   hitButton.addEventListener('click', dealCardToPlayer)
+
+//   let stayButton = document.querySelector('.stay')
+//   stayButton.addEventListener('click', dealCardsToDealer)
+
+//   console.log(playerHand)
+//   console.log(deck)
+// }

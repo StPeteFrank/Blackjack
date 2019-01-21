@@ -17,8 +17,8 @@ body {
 header {
   display: flex;
   justify-content: center;
-  margin: 1em;
-  font-size: 1em;
+  margin: 0em;
+  font-size: 3em;
 }
 li {
   list-style: none;
@@ -33,12 +33,12 @@ button {
 .stay {
   color: red;
 }
-.player-hand img {
+/* .player-hand img {
   width: 6rem;
   margin: 0.6rem;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-}
+  /* box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px; */
+} */
 
 .dealer-hand {
   display: flex;
@@ -46,13 +46,21 @@ button {
   justify-content: center;
 }
 
-.dealer-hand img {
+/* .dealer-hand img {
   width: 6rem;
   height: 139px;
   margin: 0.6rem;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
+  /* box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px; */ */
 }
+
+/* .dealer-hand li:nth-child(1) {
+  display: none;
+}
+
+.dealer-hand.shown li:nth-child(1) {
+  display: initial;
+} */
 
 .hidden {
   display: none;
